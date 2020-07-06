@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} {{ single.title }} Ha-IT LABS{% endblock title %}
+
+{% block content %}
+    
+	<a href="{% url 'index' %}">Go Back..</a>
+
+	<h2>{{single.title}}</h2>
+	<p>Posted by: {{single.author}}, Posted in: {{single.category}}</p>
+	<img src="{{single.image.url}}" alt="{{single.title}}">
+	<p>{{single.content}}</p>
+
+{% endblock content %}

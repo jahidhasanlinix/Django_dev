@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Ha-IT LABS Blog {% endblock title %}
+
+{% block content %}
+    
+
+	<ul>
+
+	{% for article in articles %}
+	<li>
+	<a href="{% url 'single' article.id %}"><h2>{{article.title}}</h2></a>
+	
+	<p>Posted by: {{article.author}}, Posted in: {{article.category}}</p>
+	<img src="{{article.image.url}}" alt="{{article.title}}">
+	<p>{{article.content}}</p>
+    </li>
+
+
+	{% endfor %}
+     </ul>
+
+{% endblock content %}
